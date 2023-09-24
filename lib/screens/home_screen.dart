@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              // Buttons
+              // Buttons and Icons
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -96,6 +96,84 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                  ),
+                  SizedBox(
+                      height: 20.0), // Add spacing between buttons and icons
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white, // White background color
+                          borderRadius:
+                              BorderRadius.circular(20.0), // Rounded edges
+                          boxShadow: [
+                            BoxShadow(
+                              color:
+                                  Colors.black.withOpacity(0.3), // Shadow color
+                              blurRadius: 5.0, // Blur radius
+                              offset: Offset(0, 3), // Shadow offset
+                            ),
+                          ],
+                        ),
+                        padding:
+                            EdgeInsets.all(6.0), // Padding for the icon button
+                        child: IconButton(
+                          onPressed: () {
+                            // Add your logic for the first icon button
+                          },
+                          icon: Icon(Icons.lock),
+                        ),
+                      ),
+                      SizedBox(width: 20.0), // Add spacing between icon buttons
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white, // White background color
+                          borderRadius:
+                              BorderRadius.circular(20.0), // Rounded edges
+                          boxShadow: [
+                            BoxShadow(
+                              color:
+                                  Colors.black.withOpacity(0.3), // Shadow color
+                              blurRadius: 5.0, // Blur radius
+                              offset: Offset(0, 3), // Shadow offset
+                            ),
+                          ],
+                        ),
+                        padding:
+                            EdgeInsets.all(6.0), // Padding for the icon button
+                        child: IconButton(
+                          onPressed: () {
+                            // Add your logic for the second icon button
+                          },
+                          icon: Icon(Icons.email),
+                        ),
+                      ),
+                      SizedBox(width: 20.0), // Add spacing between icon buttons
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white, // White background color
+                          borderRadius:
+                              BorderRadius.circular(20.0), // Rounded edges
+                          boxShadow: [
+                            BoxShadow(
+                              color:
+                                  Colors.black.withOpacity(0.3), // Shadow color
+                              blurRadius: 5.0, // Blur radius
+                              offset: Offset(0, 3), // Shadow offset
+                            ),
+                          ],
+                        ),
+                        padding:
+                            EdgeInsets.all(6.0), // Padding for the icon button
+                        child: IconButton(
+                          onPressed: () {
+                            // Add your logic for the third icon button
+                          },
+                          icon: Icon(Icons.phone),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
