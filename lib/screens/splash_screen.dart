@@ -8,7 +8,8 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _fadeAnimation;
 
@@ -20,7 +21,8 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       duration: Duration(seconds: 2),
     );
 
-    _fadeAnimation = Tween<double>(begin: 1.0, end: 0.0).animate(_animationController);
+    _fadeAnimation =
+        Tween<double>(begin: 1.0, end: 0.0).animate(_animationController);
 
     // Add a listener to navigate to the home screen when the animation completes
     _animationController.addStatusListener((status) {
@@ -43,7 +45,10 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [const Color.fromARGB(255, 169, 46, 203), const Color.fromARGB(255, 69, 14, 137)],
+            colors: [
+              const Color.fromARGB(255, 169, 46, 203),
+              const Color.fromARGB(255, 69, 14, 137)
+            ],
           ),
         ),
         child: Center(
@@ -57,7 +62,8 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                 alignment: Alignment.center,
                 child: Container(
                   width: 300,
-                  height: 380,
+                  height: 370,
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(80.50),
@@ -76,10 +82,12 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                       child: Text(
                         'GLITCH',
                         style: TextStyle(
-                          fontSize: 36.0, // Increase font size for a modern look
+                          fontSize:
+                              36.0, // Increase font size for a modern look
                           fontWeight: FontWeight.bold,
                           color: Colors.purple, // Modern text color
-                          fontFamily: 'YourCustomFont', // You can specify a custom font
+                          fontFamily:
+                              'YourCustomFont', // You can specify a custom font
                           shadows: [
                             Shadow(
                               color: Colors.black.withOpacity(0.5),

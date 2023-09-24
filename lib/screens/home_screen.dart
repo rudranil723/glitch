@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
             width: double.infinity, // Cover the entire screen width
             height: double.infinity, // Cover the entire screen height
           ),
-          // Centered Text Widget with ShaderMask
+          // Centered Text Widget
           Positioned(
             top: 100, // Adjust the top position as needed
             left: 0,
@@ -22,26 +22,46 @@ class HomeScreen extends StatelessWidget {
               color: Colors
                   .transparent, // Make the container background transparent
               child: Center(
-                child: ShaderMask(
-                  shaderCallback: (rect) {
-                    return LinearGradient(
-                      colors: [
-                        Color(0xFF00FF00),
-                        Color(0xFFFF0000),
-                      ],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ).createShader(rect);
-                  },
-                  child: Text(
-                    'GLITCH',
-                    style: TextStyle(
-                      fontSize: 62.0,
-                      fontWeight: FontWeight.w900,
-                      color: Color.fromARGB(255, 232, 224,
-                          224), // Text color (will be masked by gradient)
+                child: Column(
+                  mainAxisSize: MainAxisSize.min, // Center vertically
+                  children: <Widget>[
+                    Text(
+                      'GLITCH',
+                      style: TextStyle(
+                        fontSize: 62.0, // Font size
+                        fontWeight:
+                            FontWeight.w800, // Use the default bold font weight
+                        color: Color(0xFFFFFFFF), // Text color
+                        fontFamily: 'Helvetica',
+                        shadows: [
+                          Shadow(
+                            blurRadius:
+                                5.0, // Adjust the blur radius for the shadow
+                            color: Colors.black12, // Shadow color
+                            offset: Offset(
+                                0, 3), // Shadow offset (adjust as needed)
+                          ),
+                        ], // Specify the Helvetica font
+                      ),
                     ),
-                  ),
+                    SizedBox(height: 13.0), // Add spacing below "GLITCH" text
+                    Container(
+                      padding:
+                          EdgeInsets.all(10.0), // Add padding for the text box
+                      color: Colors
+                          .transparent, // Make the container background transparent
+                      child: Text(
+                        'Develop cognitive abilities while having fun',
+                        textAlign: TextAlign.center, // Center the text
+                        style: TextStyle(
+                          fontSize: 24.0, // Font size for the additional text
+                          color: Color(0xFFFFFFFF), // Text color
+                          fontFamily: 'Helvetica',
+                          // You can add shadows or other styles here if needed
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
