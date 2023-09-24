@@ -27,20 +27,78 @@ class HomeScreen extends StatelessWidget {
             child: Container(
               height: boxHeight, // Set the height to 75% of the screen height
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 252, 246, 246), // White background color
+                color: Colors.white, // White background color
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50.0), // Rounded top-left corner
-                  topRight: Radius.circular(50.0), // Rounded top-right corner
+                  topLeft: Radius.circular(40.0), // Rounded top-left corner
+                  topRight: Radius.circular(40.0), // Rounded top-right corner
                 ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withOpacity(0.3), // Shadow color
-                    blurRadius: 50.0, // Blur radius
+                    blurRadius: 10.0, // Blur radius
                     offset: Offset(0, 5), // Shadow offset
                   ),
                 ],
               ),
-              // You can add child widgets inside this container if needed
+              // Buttons
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 250.0,
+                    height: 50.0, // Set button width to 200px
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Add your login logic here
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white, // Button background color
+                        onPrimary: Colors.black, // Text color
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(32.0), // 80% rounded edges
+                        ),
+                        padding: EdgeInsets.all(16.0), // Padding
+                        elevation: 5.0, // Elevation
+                      ),
+                      child: Text(
+                        'Log In',
+                        style: TextStyle(
+                          fontSize: 19.0,
+                          fontFamily: 'SF Pro', // Set the SF Pro font
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.0), // Add spacing between buttons
+                  SizedBox(
+                    width: 250.0,
+                    height: 50.0, // Set button width to 200px
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Add your signup logic here
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white, // Button background color
+                        onPrimary: Colors.black, // Text color
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(32.0), // 80% rounded edges
+                        ),
+                        padding: EdgeInsets.all(16.0), // Padding
+                        elevation: 5.0, // Elevation
+                      ),
+                      child: Text(
+                        'Sign Up',
+                        style: TextStyle(
+                          fontSize: 19.0,
+                          fontFamily: 'SF Pro', // Set the SF Pro font
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
