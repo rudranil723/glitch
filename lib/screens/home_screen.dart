@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'login_screen.dart'; // Import your login screen
+import 'signin_screen.dart'; // Import your sign-up screen
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -49,7 +51,12 @@ class HomeScreen extends StatelessWidget {
                     height: 50.0, // Set button width to 200px
                     child: ElevatedButton(
                       onPressed: () {
-                        // Add your login logic here
+                        // Navigate to the login screen when the "Log In" button is pressed
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginScreen()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.white, // Button background color
@@ -76,7 +83,12 @@ class HomeScreen extends StatelessWidget {
                     height: 50.0, // Set button width to 200px
                     child: ElevatedButton(
                       onPressed: () {
-                        // Add your signup logic here
+                        // Navigate to the sign-up screen when the "Sign Up" button is pressed
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SigninScreen()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.white, // Button background color
