@@ -99,6 +99,14 @@ class LoginScreen extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
+                    Text(
+                      'Get Started Free',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 20.0), // Add spacing
                     // Email/Username Input
                     TextFormField(
                       decoration: InputDecoration(
@@ -130,6 +138,7 @@ class LoginScreen extends StatelessWidget {
                           ),
                           padding: EdgeInsets.all(16.0),
                           elevation: 5.0,
+                          shadowColor: Colors.black.withOpacity(0.3),
                         ),
                         child: Text(
                           'LOG IN',
@@ -221,7 +230,7 @@ class LoginScreen extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  'Already have an account?',
+                  "Don't have an account?",
                   style: TextStyle(
                     fontSize: 10.0,
                     fontWeight: FontWeight.bold,
@@ -247,6 +256,8 @@ class LoginScreen extends StatelessWidget {
                       vertical: 10.0,
                       horizontal: 20.0,
                     ),
+                    elevation: 5.0,
+                    shadowColor: Colors.black.withOpacity(0.3),
                   ),
                   child: Text(
                     'Sign Up',
