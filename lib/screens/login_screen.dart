@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:glitch/screens/signin_screen.dart';
+import 'package:glitch/screens/mainscreen.dart'; // Import MainScreen
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -128,7 +129,12 @@ class LoginScreen extends StatelessWidget {
                       height: 50.0,
                       child: ElevatedButton(
                         onPressed: () {
-                          // Add your login logic here
+                          // Navigate to MainScreen when the "Log In" button is pressed
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MainScreen()),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.white,
