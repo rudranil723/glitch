@@ -12,7 +12,6 @@ class MainScreen extends StatelessWidget {
           'GLITCH',
           style: TextStyle(
             color: Colors.purple,
-            fontFamily: 'SF Pro',
           ),
         ),
         leading: Padding(
@@ -36,27 +35,25 @@ class MainScreen extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
-              Container(
-                color: Colors.purple,
-                padding: EdgeInsets.symmetric(vertical: 20.0),
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.purple,
+                ),
                 child: Column(
-                  children: <Widget>[
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.3),
-                            blurRadius: 5.0,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                      child: CircleAvatar(
-                        radius: 50.0,
-                        backgroundImage: AssetImage('assets/images/kid.jpg'),
-                        backgroundColor: Colors.white,
-                      ),
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/kid.jpg'),
+                      radius: 40.0,
+                      backgroundColor: Colors.white,
+                      // Add shadow to the image circle
+                      // shadows: [
+                      //   BoxShadow(
+                      //     color: Colors.black.withOpacity(0.3),
+                      //     blurRadius: 5.0,
+                      //     offset: Offset(0, 3),
+                      //   ),
+                      // ],
                     ),
                     SizedBox(height: 10.0),
                     Text(
@@ -65,11 +62,12 @@ class MainScreen extends StatelessWidget {
                         color: Colors.white,
                         fontSize: 24,
                         fontFamily: 'SF Pro',
+                        // Add shadow to the text
                         shadows: [
-                          Shadow(
-                            color: Colors.black.withOpacity(0.5),
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            blurRadius: 5.0,
                             offset: Offset(0, 3),
-                            blurRadius: 6,
                           ),
                         ],
                       ),
@@ -78,92 +76,58 @@ class MainScreen extends StatelessWidget {
                 ),
               ),
               ListTile(
-                title: Text(
-                  'Home',
-                  style: TextStyle(
-                    fontFamily: 'SF Pro',
-                  ),
-                ),
+                title: Text('Home'),
                 onTap: () {
                   Navigator.pop(context);
                   // Add your logic for navigating to the Home screen here
                 },
               ),
               ListTile(
-                title: Text(
-                  "Doctor's Report",
-                  style: TextStyle(
-                    fontFamily: 'SF Pro',
-                  ),
-                ),
+                title: Text("Doctor's Report"),
                 onTap: () {
                   Navigator.pop(context);
                   // Add your logic for navigating to the Doctor's Report screen here
                 },
               ),
               ListTile(
-                title: Text(
-                  'Games',
-                  style: TextStyle(
-                    fontFamily: 'SF Pro',
-                  ),
-                ),
+                title: Text('Games'),
                 onTap: () {
                   Navigator.pop(context);
                   // Add your logic for navigating to the Games screen here
                 },
               ),
               ListTile(
-                title: Text(
-                  'Roadmap',
-                  style: TextStyle(
-                    fontFamily: 'SF Pro',
-                  ),
-                ),
+                title: Text('Roadmap'),
                 onTap: () {
                   Navigator.pop(context);
                   // Add your logic for navigating to the Roadmap screen here
                 },
               ),
               Divider(),
-              Expanded(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    margin: EdgeInsets.all(20.0),
-                    decoration: BoxDecoration(
+              // Centered Log Out Button
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Add your logout logic here
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    onPrimary: Colors.black,
+                    shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(32.0),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.3),
-                          blurRadius: 5.0,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
                     ),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Add your logout logic here
-                      },
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.white,
-                        onPrimary: Colors.black,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(32.0),
-                        ),
-                        padding: EdgeInsets.symmetric(
-                          vertical: 10.0,
-                          horizontal: 20.0,
-                        ),
-                        elevation: 5.0,
-                        shadowColor: Colors.black.withOpacity(0.3),
-                      ),
-                      child: Text(
-                        'Log Out',
-                        style: TextStyle(
-                          fontFamily: 'SF Pro',
-                        ),
-                      ),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 10.0,
+                      horizontal: 20.0,
+                    ),
+                    elevation: 5.0,
+                    shadowColor: Colors.black.withOpacity(0.3),
+                  ),
+                  child: Text(
+                    'Log Out',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontFamily: 'SF Pro',
                     ),
                   ),
                 ),
@@ -181,7 +145,88 @@ class MainScreen extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
           ),
-          // Your content goes here
+          // Three Rows of Boxes
+          Column(
+            children: <Widget>[
+              // First Row: Box 1 with Gap
+              Padding(
+                padding: EdgeInsets.only(top: 15.0),
+                child: Container(
+                  margin: EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        blurRadius: 10.0,
+                        offset: Offset(0, 5),
+                      ),
+                    ],
+                  ),
+                  height: 200.0,
+                  width: MediaQuery.of(context).size.width *
+                      0.8, // Adjust width as needed
+                ),
+              ),
+              // Second Row: Box 2 and Box 3
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.all(12.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          blurRadius: 10.0,
+                          offset: Offset(0, 5),
+                        ),
+                      ],
+                    ),
+                    height: 200.0,
+                    width: MediaQuery.of(context).size.width * 0.4,
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(12.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          blurRadius: 10.0,
+                          offset: Offset(0, 5),
+                        ),
+                      ],
+                    ),
+                    height: 200.0,
+                    width: MediaQuery.of(context).size.width * 0.4,
+                  ),
+                ],
+              ),
+              // Third Row: Box 4
+              Container(
+                margin: EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      blurRadius: 10.0,
+                      offset: Offset(0, 5),
+                    ),
+                  ],
+                ),
+                height: 200.0,
+                width: MediaQuery.of(context).size.width *
+                    0.8, // Adjust width as needed
+              ),
+            ],
+          ),
         ],
       ),
     );
