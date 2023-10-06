@@ -207,7 +207,7 @@ class MainScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              // Third Row: Box 4
+              // Third Row: Box 4 with Buttons
               Container(
                 margin: EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
@@ -224,6 +224,63 @@ class MainScreen extends StatelessWidget {
                 height: 200.0,
                 width: MediaQuery.of(context).size.width *
                     0.8, // Adjust width as needed
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width *
+                          0.6, // Adjust width as needed
+                      height: 80.0,
+                      margin: EdgeInsets.symmetric(vertical: 10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20.0),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            blurRadius: 5.0,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Game 1',
+                          style: TextStyle(
+                            fontSize: 16.0,
+                            fontFamily: 'SF Pro',
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width *
+                          0.6, // Adjust width as needed
+                      height: 70.0,
+                      margin: EdgeInsets.symmetric(vertical: 10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20.0),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            blurRadius: 5.0,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Game 2',
+                          style: TextStyle(
+                            fontSize: 16.0,
+                            fontFamily: 'SF Pro',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
