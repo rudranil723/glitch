@@ -14,127 +14,6 @@ class MainScreen extends StatelessWidget {
             color: Colors.purple,
           ),
         ),
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Builder(
-            builder: (context) => IconButton(
-              icon: Icon(
-                Icons.menu,
-                color: Colors.purple,
-              ),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            ),
-          ),
-        ),
-      ),
-      drawer: Container(
-        width: MediaQuery.of(context).size.width * 0.5,
-        child: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.purple,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/kid.jpg'),
-                      radius: 40.0,
-                      backgroundColor: Colors.white,
-                      // Add shadow to the image circle
-                      // shadows: [
-                      //   BoxShadow(
-                      //     color: Colors.black.withOpacity(0.3),
-                      //     blurRadius: 5.0,
-                      //     offset: Offset(0, 3),
-                      //   ),
-                      // ],
-                    ),
-                    SizedBox(height: 10.0),
-                    Text(
-                      'Hey USER!',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontFamily: 'SF Pro',
-                        // Add shadow to the text
-                        shadows: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.3),
-                            blurRadius: 5.0,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              ListTile(
-                title: Text('Home'),
-                onTap: () {
-                  Navigator.pop(context);
-                  // Add your logic for navigating to the Home screen here
-                },
-              ),
-              ListTile(
-                title: Text("Doctor's Report"),
-                onTap: () {
-                  Navigator.pop(context);
-                  // Add your logic for navigating to the Doctor's Report screen here
-                },
-              ),
-              ListTile(
-                title: Text('Games'),
-                onTap: () {
-                  Navigator.pop(context);
-                  // Add your logic for navigating to the Games screen here
-                },
-              ),
-              ListTile(
-                title: Text('Roadmap'),
-                onTap: () {
-                  Navigator.pop(context);
-                  // Add your logic for navigating to the Roadmap screen here
-                },
-              ),
-              Divider(),
-              // Centered Log Out Button
-              Center(
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Add your logout logic here
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    onPrimary: Colors.black,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32.0),
-                    ),
-                    padding: EdgeInsets.symmetric(
-                      vertical: 10.0,
-                      horizontal: 20.0,
-                    ),
-                    elevation: 5.0,
-                    shadowColor: Colors.black.withOpacity(0.3),
-                  ),
-                  child: Text(
-                    'Log Out',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontFamily: 'SF Pro',
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
       ),
       body: Stack(
         children: <Widget>[
@@ -256,7 +135,7 @@ class MainScreen extends StatelessWidget {
                     Container(
                       width: MediaQuery.of(context).size.width *
                           0.6, // Adjust width as needed
-                      height: 70.0,
+                      height: 80.0,
                       margin: EdgeInsets.symmetric(vertical: 10.0),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -283,6 +162,32 @@ class MainScreen extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.purple,
+        selectedItemColor: Colors.purpleAccent,
+        unselectedItemColor: Colors.black, // Set unselected item color to black
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons
+                .directions_car), // Use the 'directions_car' icon for a road
+            label: 'roadmap',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons
+                .sports_esports), // Use the 'sports_esports' icon for games
+            label: 'games',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons
+                .local_hospital), // Use the 'local_hospital' icon for doctor
+            label: 'Doctor',
           ),
         ],
       ),
