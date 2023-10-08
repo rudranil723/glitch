@@ -1,6 +1,41 @@
 import 'package:flutter/material.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
+  @override
+  _MainScreenState createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  int _selectedIndex = 0;
+
+  final List<IconData> _icons = [
+    Icons.home,
+    Icons.map, // Use 'map' for roadmap
+    Icons.videogame_asset, // Use 'videogame_asset' for games
+    Icons.local_hospital, // Use 'local_hospital' for doctor report
+  ];
+
+  final List<String> _iconNames = [
+    'Home',
+    'Roadmap',
+    'Games',
+    'Doctor Report',
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    // You can add logic here to navigate to different screens based on the index.
+    // For example:
+    // if (index == 0) {
+    //   Navigator.of(context).pushNamed('/home');
+    // } else if (index == 1) {
+    //   Navigator.of(context).pushNamed('/roadmap');
+    // } // Add similar logic for other screens.
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +59,6 @@ class MainScreen extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
           ),
-          // Three Rows of Boxes
           Column(
             children: <Widget>[
               // First Row: Box 1 with Gap
@@ -48,7 +82,6 @@ class MainScreen extends StatelessWidget {
                       0.8, // Adjust width as needed
                 ),
               ),
-              // Second Row: Box 2 and Box 3
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
@@ -86,7 +119,6 @@ class MainScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              // Third Row: Box 4 with Buttons
               Container(
                 margin: EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
@@ -168,28 +200,18 @@ class MainScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.purple,
         selectedItemColor: Colors.purpleAccent,
-        unselectedItemColor: Colors.black, // Set unselected item color to black
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons
-                .directions_car), // Use the 'directions_car' icon for a road
-            label: 'roadmap',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons
-                .sports_esports), // Use the 'sports_esports' icon for games
-            label: 'games',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons
-                .local_hospital), // Use the 'local_hospital' icon for doctor
-            label: 'Doctor',
-          ),
-        ],
+        unselectedItemColor: Colors.black,
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: List.generate(_icons.length, (index) {
+          return BottomNavigationBarItem(
+            icon: Icon(
+              _icons[index],
+              size: 32.0,
+            ),
+            label: _iconNames[index],
+          );
+        }),
       ),
     );
   }
