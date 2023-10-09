@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:glitch/screens/games.dart';
+import 'package:glitch/screens/roadmap.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -27,13 +29,22 @@ class _MainScreenState extends State<MainScreen> {
       _selectedIndex = index;
     });
 
-    // You can add logic here to navigate to different screens based on the index.
-    // For example:
-    // if (index == 0) {
-    //   Navigator.of(context).pushNamed('/home');
-    // } else if (index == 1) {
-    //   Navigator.of(context).pushNamed('/roadmap');
-    // } // Add similar logic for other screens.
+    // Navigate to different screens based on the index.
+    if (index == 0) {
+      // Handle the "Home" screen navigation here.
+    } else if (index == 1) {
+      // Navigate to the "RoadmapScreen" when "Roadmap" is clicked.
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => RoadmapScreen(),
+      ));
+    } else if (index == 2) {
+      // Navigate to the "GamesScreen" when "Games" is clicked.
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => GamesScreen(),
+      ));
+    } else if (index == 3) {
+      // Handle the "Doctor Report" screen navigation here.
+    }
   }
 
   @override
