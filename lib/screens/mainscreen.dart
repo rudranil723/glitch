@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:glitch/screens/games.dart';
 import 'package:glitch/screens/roadmap.dart';
 import 'package:glitch/screens/doctorreport.dart';
+import 'package:glitch/screens/profile.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -51,6 +52,13 @@ class _MainScreenState extends State<MainScreen> {
     }
   }
 
+  void _onBox1Tapped() {
+    // Navigate to the "ProfileScreen" when "Box 1" is clicked.
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => ProfileScreen(),
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,22 +87,25 @@ class _MainScreenState extends State<MainScreen> {
               // First Row: Box 1 with Gap
               Padding(
                 padding: EdgeInsets.only(top: 15.0),
-                child: Container(
-                  margin: EdgeInsets.all(16.0),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
-                        blurRadius: 10.0,
-                        offset: Offset(0, 5),
-                      ),
-                    ],
+                child: GestureDetector(
+                  onTap: _onBox1Tapped, // Call the onTap function
+                  child: Container(
+                    margin: EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          blurRadius: 10.0,
+                          offset: Offset(0, 5),
+                        ),
+                      ],
+                    ),
+                    height: 200.0,
+                    width: MediaQuery.of(context).size.width *
+                        0.8, // Adjust width as needed
                   ),
-                  height: 200.0,
-                  width: MediaQuery.of(context).size.width *
-                      0.8, // Adjust width as needed
                 ),
               ),
               Row(
