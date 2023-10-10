@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:glitch/screens/mainscreen.dart';
+import 'package:glitch/screens/roadmap.dart';
+import 'package:glitch/screens/games.dart';
 
-class RoadmapScreen extends StatefulWidget {
+class DoctorReportScreen extends StatefulWidget {
   @override
-  _RoadmapScreenState createState() => _RoadmapScreenState();
+  _DoctorReportScreenState createState() => _DoctorReportScreenState();
 }
 
-class _RoadmapScreenState extends State<RoadmapScreen> {
-  int _selectedIndex = 1; // Set the default selected index to 'Roadmap'
+class _DoctorReportScreenState extends State<DoctorReportScreen> {
+  int _selectedIndex = 3; // Set the default selected index to 'Doctor Report'
 
   final List<IconData> _icons = [
     Icons.home,
@@ -28,21 +30,29 @@ class _RoadmapScreenState extends State<RoadmapScreen> {
       _selectedIndex = index;
     });
 
-    // Navigate to different screens based on the index.
     if (index == 0) {
       // Navigate to the "MainScreen" when "Home" is clicked.
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => MainScreen(),
       ));
+    } else if (index == 1) {
+      // Navigate to the "RoadmapScreen" when "Roadmap" is clicked.
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (context) => RoadmapScreen(),
+      ));
+    } else if (index == 2) {
+      // Navigate to the "GamesScreen" when "Games" is clicked.
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (context) => GamesScreen(),
+      ));
     }
-    // You can add similar logic for other screens.
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Roadmap'),
+        title: Text('Doctor Report'),
       ),
       body: Stack(
         children: <Widget>[
@@ -53,7 +63,7 @@ class _RoadmapScreenState extends State<RoadmapScreen> {
             width: double.infinity,
             height: double.infinity,
           ),
-          // You can add your roadmap content here
+          // You can add your doctor report content here
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

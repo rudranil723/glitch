@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:glitch/screens/games.dart';
 import 'package:glitch/screens/roadmap.dart';
+import 'package:glitch/screens/doctorreport.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -43,7 +44,10 @@ class _MainScreenState extends State<MainScreen> {
         builder: (context) => GamesScreen(),
       ));
     } else if (index == 3) {
-      // Handle the "Doctor Report" screen navigation here.
+      // Navigate to the "DoctorReportScreen" when "Doctor Report" is clicked.
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => DoctorReportScreen(),
+      ));
     }
   }
 
