@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:glitch/screens/mainscreen.dart';
 import 'package:glitch/screens/roadmap.dart';
 import 'package:glitch/screens/doctorreport.dart';
+import 'package:glitch/screens/game1.dart';
 
 class GamesScreen extends StatefulWidget {
   @override
@@ -118,11 +119,19 @@ class _GamesScreenState extends State<GamesScreen> {
                               ),
                             ],
                           ),
-                          child: Center(
-                            child: Text(
-                              'game 1',
-                              style: TextStyle(
-                                fontSize: 16.0,
+                          child: TextButton(
+                            onPressed: () {
+                              // Navigate to the "Game1" screen when "game 1" button is clicked.
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Game1(),
+                              ));
+                            },
+                            child: Center(
+                              child: Text(
+                                'game 1',
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                ),
                               ),
                             ),
                           ),

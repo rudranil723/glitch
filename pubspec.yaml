@@ -56,6 +56,15 @@ flutter:
   assets:
     - assets/images/bg.jpeg
     - assets/images/kid.jpg
+    - assets/game/img1.png
+    - assets/game/img2.png
+    - assets/game/img3.png
+    - assets/game/img4.png
+    - assets/game/img5.png
+    - assets/game/img6.png
+    - assets/game/img7.png
+    - assets/game/img8.png
+    - assets/game/white.jpg
 # dependencies:
 #   flutter:
 #     sdk: flutter
